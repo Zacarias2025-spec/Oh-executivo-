@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DZM Corretor de Imóveis</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+    <h1 class="destacado">DZM Corretor de Imóveis</h1>
+    <p class="subtitulo">Zacarias intermediário mais rápido oh Executivo</p>
+    <button id="verProdutosBtn">Ver Produtos</button>
+</header>
+
+<section class="apresentacao">
+    <p>
+        Zacarias é um intermediário experiente, atuando há mais de 4 anos no mercado de Cabinda. Reconhecido pela sua seriedade, transparência e capacidade de conectar clientes às melhores oportunidades, ele construiu uma reputação sólida baseada em confiança e eficiência.
+        <br/><br/>
+        Com profundo conhecimento do mercado local, Zacarias auxilia na mediação de negócios, resolução de pendências e facilitação de processos, sempre oferecendo um atendimento personalizado e rápido.
+        <br/><br/>
+        Profissional comprometido, sempre disponível para garantir que cada cliente tenha uma experiência segura, clara e objetiva.
+        <br/><br/>
+        Telefone: 924 829 157
+        <br/>
+        Cidade: Cabinda
+    </p>
+</section>
+
+<!-- Anúncio com o link -->
+<div id="anuncio" style="display:none;">
+    <h2>Confira este link:</h2>
+    <a href="https://otieu.com/4/10215868" target="_blank">https://otieu.com/4/10215868</a>
+</div>
+
+<script>
+  const btnVerProdutos = document.getElementById('verProdutosBtn');
+  const anuncio = document.getElementById('anuncio');
+
+  btnVerProdutos.onclick = () => {
+    anuncio.style.display = 'block'; // Mostrar anúncio
+    setTimeout(() => {
+      window.location.href = 'produtos.html'; // Após 3 segundos, direcionar
+    }, 3000);
+  };
+</script>
+</body>
+</html>
