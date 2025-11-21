@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Produtos - DZM Corretor</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+<h1>Produtos</h1>
+</header>
+
+<div id="secções">
+  <!-- Seções de produtos -->
+  <button onclick="mostrarSecao('casas')">Casas</button>
+  <button onclick="mostrarSecao('transportes')">Meio de Transporte</button>
+  <button onclick="mostrarSecao('terrenos')">Terrenos</button>
+  <button onclick="mostrarSecao('tecnologia')">Tecnologia</button>
+  <button onclick="mostrarSecao('outros')">Outros</button>
+</div>
+
+<div id="listaProdutos"></div>
+
+<!-- Seção de detalhes -->
+<div id="detalhes" style="display:none;">
+  <button onclick="voltarProdutos()">Voltar</button>
+  <div id="detalhesConteudo"></div>
+</div>
+
+<!-- Rodapé com contato -->
+<footer>
+  <p>Sobre o criador: WhatsApp 997711838</p>
+</footer>
+
+<script>
+const produtos = {
+  casas: [
+    { nome: "Casa 1", img: "https://via.placeholder.com/150", valor: "100.000 Kz", detalhes: "Casa com 3 quartos e 2 banheiros." },
+    { nome: "Casa 2", img: "https://via.placeholder.com/150", valor: "150.000 Kz", detalhes: "Casa moderna com piscina." },
+    { nome: "Casa 3", img: "https://via.placeholder.com/150", valor: "120.000 Kz", detalhes: "Casa no centro da cidade." }
+  ],
+  transporte: [
+    { nome: "Carro 1", img: "https://via.placeholder.com/150", valor: "5.000.000 Kz", detalhes: "Carro sedan 2018." },
+    { nome: "Moto 1", img: "https://via.placeholder.com/150", valor: "600.000 Kz", detalhes: "Moto 125cc." }
+  ],
+  terrenos: [
+    { nome: "Terreno A", img: "https://via.placeholder.com/150", valor: "50.000 Kz", detalhes: "Terreno de 500m²." }
+  ],
+  tecnologia: [
+    { nome: "Tech 1", img: "https://via.placeholder.com/150", valor: "Produto de tecnologia", detalhes: "Compartilhado no Facebook", link: "https://www.facebook.com/share/1DZWTRLpv5/" }
+  ],
+  outros: [
+    { nome: "Outro 1", img: "https://via.placeholder.com/150", valor: "Valor desconhecido", detalhes: "Produto diverso." }
+  ]
+};
+
+function mostrarSecao(secao) {
+  const lista = document.getElementById('listaProdutos');
+  lista.innerHTML = '';
+
+  produtos[secao].forEach((produto, index) => {
+    const div = document.createElement('div');
+    div.className = 'produto';
+
+    div.innerHTML = `
+      <h3>${produto.nome}</h3>
+      <img src="${produto.img}" alt="${produto.nome}" width="150" />
+      <p>Valor: ${produto.valor}</p>
+      <button onclick='mostrarDetalhes("${secao}", ${index})'>Ver detalhes</button>
+    `;
+    lista.appendChild(div);
+  });
+  document.getElementById('listaProdutos').style.display = 'block';
+  document.getElementById('detalhes').style.display = 'none';
+}
+
+function mostrarDetalhes(secao, index) {
+  const produto = produtos[secao][index];
+  const detalhesDiv = document.getElementById('detalhesConteudo');
+  detalhesDiv.innerHTML = `
+    <h2>${produto.nome}</h2>
+    <img src="${produto.img}" alt="${produto.nome}" width="300" />
+    <p>Valor: ${produto.valor}</p>
+    <p>${produto.detalhes}</p>
+    ${produto.link ? `<a href="${produto.link}" target="_blank">Compartilhar no Facebook</a>` : ''}
+  `;
+  document.getElementById('listaProdutos').style.display = 'none';
+  document.getElementById('detalhes').style.display = 'block';
+}
+
+function voltarProdutos() {
+  document.getElementById('listaProdutos').style.display = 'block';
+  document.getElementById('detalhes').style.display = 'none';
+}
+
+// Inicializa mostrando secção padrão
+mostrarSecao('casas');
+</script>
+</body>
+</html>
