@@ -1,48 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DZM Corretor de Imóveis</title>
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DZM Corretor de Imóveis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #5a00ff, #8a33ff, #b066ff);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .header h1 span {
+            font-weight: 700;
+        }
+
+        .sub {
+            font-size: 17px;
+            color: #ffffff;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(6px);
+        }
+
+        .card h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .card p {
+            line-height: 1.7;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .info {
+            margin-top: 25px;
+            font-size: 17px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 24px;
+            background: #ff7b00;
+            color: white;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #ff9e42;
+        }
+    </style>
 </head>
+
 <body>
-<header>
-    <h1 class="destacado">DZM Corretor de Imóveis</h1>
-    <p class="subtitulo">Zacarias intermediário mais rápido oh Executivo</p>
-    <button id="verProdutosBtn">Ver Produtos</button>
-</header>
 
-<section class="apresentacao">
-    <p>
-        Zacarias é um intermediário experiente, atuando há mais de 4 anos no mercado de Cabinda. Reconhecido pela sua seriedade, transparência e capacidade de conectar clientes às melhores oportunidades, ele construiu uma reputação sólida baseada em confiança e eficiência.
-        <br/><br/>
-        Com profundo conhecimento do mercado local, Zacarias auxilia na mediação de negócios, resolução de pendências e facilitação de processos, sempre oferecendo um atendimento personalizado e rápido.
-        <br/><br/>
-        Profissional comprometido, sempre disponível para garantir que cada cliente tenha uma experiência segura, clara e objetiva.
-        <br/><br/>
-        Telefone: 924 829 157
-        <br/>
-        Cidade: Cabinda
-    </p>
-</section>
+    <div class="container">
 
-<!-- Anúncio com o link -->
-<div id="anuncio" style="display:none;">
-    <h2>Confira este link:</h2>
-    <a href="https://otieu.com/4/10215868" target="_blank">https://otieu.com/4/10215868</a>
-</div>
+        <div class="header">
+            <h1>DZM CORRETOR DE IMÓVEIS</h1>
+            <div class="sub">Zacarias o intermediário mais rápido oh executivo</div>
+        </div>
 
-<script>
-  const btnVerProdutos = document.getElementById('verProdutosBtn');
-  const anuncio = document.getElementById('anuncio');
+        <div class="card">
+            <h2>Conheça Zacarias</h2>
 
-  btnVerProdutos.onclick = () => {
-    anuncio.style.display = 'block'; // Mostrar anúncio
-    setTimeout(() => {
-      window.location.href = 'produtos.html'; // Após 3 segundos, direcionar
-    }, 3000);
-  };
-</script>
+            <p>
+                Zacarias é um <strong>intermediário experiente</strong>, atuando há mais de
+                <strong>4 anos no mercado de Cabinda</strong>. Reconhecido pela sua seriedade,
+                transparência e capacidade de conectar clientes às melhores oportunidades, ele
+                construiu uma reputação sólida baseada em confiança e eficiência.
+            </p>
+
+            <p>
+                Com profundo conhecimento do mercado local, Zacarias auxilia na mediação de
+                negócios, resolução de pendências e facilitação de processos, sempre oferecendo
+                um atendimento personalizado e rápido.
+            </p>
+
+            <p>
+                Profissional comprometido, sempre disponível para garantir que cada cliente tenha
+                uma experiência segura, clara e objetiva.
+            </p>
+
+            <div class="info">
+                📞 <strong>Telefone:</strong> 924 829 157 <br>
+                📍 <strong>Cidade:</strong> Cabinda
+            </div>
+
+            <a class="button" href="#">Ver Produtos</a>
+        </div>
+
+    </div>
 </body>
 </html>
